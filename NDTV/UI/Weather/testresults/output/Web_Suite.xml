@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.3 on win32)" generated="20200926 08:06:06.398" rpa="false">
+<suite id="s1" name="Sanity" source="D:\Automation\TestVagrant\TestVagrantAutomationWork\NDTV\UI\Weather\testcases\Sanity.robot">
+<test id="s1-t1" name="TC01 Validate Browser Navigation of NDTV Main Page">
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<status status="FAIL" starttime="20200926 08:06:06.968" endtime="20200926 08:06:06.969"></status>
+</kw>
+<status status="FAIL" starttime="20200926 08:06:06.968" endtime="20200926 08:06:06.969"></status>
+</kw>
+<status status="FAIL" starttime="20200926 08:06:06.968" endtime="20200926 08:06:06.969"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200926 08:06:06.969" endtime="20200926 08:06:06.970"></status>
+</kw>
+<tags>
+<tag>TC01</tag>
+</tags>
+<status status="FAIL" starttime="20200926 08:06:06.965" endtime="20200926 08:06:06.970" critical="yes">Execution terminated by signal</status>
+</test>
+<test id="s1-t2" name="TC02 Validate Browser Navigates to Weather Report Page">
+<tags>
+<tag>robot:exit</tag>
+<tag>TC02</tag>
+</tags>
+<status status="FAIL" starttime="20200926 08:06:06.972" endtime="20200926 08:06:06.973" critical="yes">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t3" name="TC03 Validate Weather Report Page Elements">
+<tags>
+<tag>robot:exit</tag>
+<tag>TC03</tag>
+</tags>
+<status status="FAIL" starttime="20200926 08:06:06.977" endtime="20200926 08:06:06.978" critical="yes">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t4" name="TC04 Search by a Valid Pin City Name">
+<tags>
+<tag>robot:exit</tag>
+<tag>TC04</tag>
+</tags>
+<status status="FAIL" starttime="20200926 08:06:06.980" endtime="20200926 08:06:06.980" critical="yes">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t5" name="TC05 Search by an InValid Pin City Name">
+<tags>
+<tag>robot:exit</tag>
+<tag>TC05</tag>
+</tags>
+<status status="FAIL" starttime="20200926 08:06:06.982" endtime="20200926 08:06:06.983" critical="yes">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t6" name="TC06 Search by a default Pin City Name">
+<tags>
+<tag>robot:exit</tag>
+<tag>TC06</tag>
+</tags>
+<status status="FAIL" starttime="20200926 08:06:06.986" endtime="20200926 08:06:06.987" critical="yes">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t7" name="TC07 Temperature Values are available in map for a default city name">
+<tags>
+<tag>robot:exit</tag>
+<tag>TC07</tag>
+</tags>
+<status status="FAIL" starttime="20200926 08:06:06.988" endtime="20200926 08:06:06.989" critical="yes">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t8" name="TC08 Temperature Values are not available in map for a non-default unsearched city name">
+<tags>
+<tag>robot:exit</tag>
+<tag>TC08</tag>
+</tags>
+<status status="FAIL" starttime="20200926 08:06:06.991" endtime="20200926 08:06:06.991" critical="yes">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t9" name="TC09 Temperature Values are available in map for a non-default searched city name">
+<tags>
+<tag>robot:exit</tag>
+<tag>TC09</tag>
+</tags>
+<status status="FAIL" starttime="20200926 08:06:06.995" endtime="20200926 08:06:06.996" critical="yes">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t10" name="TC10 Validate weather details upon selecting any default cities in the map">
+<tags>
+<tag>robot:exit</tag>
+<tag>TC10</tag>
+</tags>
+<status status="FAIL" starttime="20200926 08:06:06.997" endtime="20200926 08:06:06.998" critical="yes">Test execution stopped due to a fatal error.</status>
+</test>
+<kw name="Close Browsers" type="teardown">
+<msg timestamp="20200926 08:06:07.004" level="FAIL">No keyword with name 'Close Browsers' found. Did you mean:
+    SeleniumLibrary.Close Browser
+    SeleniumLibrary.Close All Browsers</msg>
+<status status="FAIL" starttime="20200926 08:06:07.004" endtime="20200926 08:06:07.004">No keyword with name 'Close Browsers' found. Did you mean:
+    SeleniumLibrary.Close Browser
+    SeleniumLibrary.Close All Browsers</status>
+</kw>
+<status status="FAIL" starttime="20200926 08:06:06.403" endtime="20200926 08:06:07.004">Suite teardown failed:
+No keyword with name 'Close Browsers' found. Did you mean:
+    SeleniumLibrary.Close Browser
+    SeleniumLibrary.Close All Browsers</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="10">Critical Tests</stat>
+<stat pass="0" fail="10">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="9">robot:exit</stat>
+<stat pass="0" fail="1">TC01</stat>
+<stat pass="0" fail="1">TC02</stat>
+<stat pass="0" fail="1">TC03</stat>
+<stat pass="0" fail="1">TC04</stat>
+<stat pass="0" fail="1">TC05</stat>
+<stat pass="0" fail="1">TC06</stat>
+<stat pass="0" fail="1">TC07</stat>
+<stat pass="0" fail="1">TC08</stat>
+<stat pass="0" fail="1">TC09</stat>
+<stat pass="0" fail="1">TC10</stat>
+</tag>
+<suite>
+<stat pass="0" fail="10" id="s1" name="Sanity">Sanity</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

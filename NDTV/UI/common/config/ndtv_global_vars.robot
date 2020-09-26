@@ -8,6 +8,7 @@ Documentation     List of Global Page Elements of the NDTV web application
 ${TIMEOUT}  	1min
 ${RETRY}	5s
 ${Browser}   chrome
+${OUTPUTDIR}        ${CURDIR}../testresults
 
 ${ndtv_url}     https://www.ndtv.com/
 ${ndtv_page_title}       xpath://a[@href='https://www.ndtv.com']

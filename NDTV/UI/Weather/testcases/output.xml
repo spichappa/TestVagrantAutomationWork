@@ -1,12 +1,415 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.7.3 on win32)" generated="20200926 01:42:11.148" rpa="false">
+<robot generator="Robot 3.2.2 (Python 3.7.3 on win32)" generated="20200926 08:58:50.137" rpa="false">
 <suite id="s1" name="Sanity" source="D:\Automation\TestVagrant\TestVagrantAutomationWork\NDTV\UI\Weather\testcases\Sanity.robot">
-<test id="s1-t1" name="TC05 Search an InValid Pin City Name">
+<test id="s1-t1" name="TC01 Validate Browser Navigation of NDTV Main Page">
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 08:58:50.716" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 08:58:50.716" endtime="20200926 08:58:56.052"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:58:50.715" endtime="20200926 08:58:56.053"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 08:58:56.054" endtime="20200926 08:58:58.488"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 08:58:58.505" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 08:58:58.488" endtime="20200926 08:58:58.505"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:58:56.053" endtime="20200926 08:58:58.506"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:58:50.715" endtime="20200926 08:58:58.506"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200926 08:58:58.506" endtime="20200926 08:59:00.857"></status>
+</kw>
+<tags>
+<tag>TC01</tag>
+</tags>
+<status status="PASS" starttime="20200926 08:58:50.712" endtime="20200926 08:59:00.858" critical="yes"></status>
+</test>
+<test id="s1-t2" name="TC02 Validate Browser Navigates to Weather Report Page">
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:00.861" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 08:59:00.861" endtime="20200926 08:59:06.829"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:00.860" endtime="20200926 08:59:06.829"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 08:59:06.830" endtime="20200926 08:59:06.992"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:07.042" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 08:59:06.992" endtime="20200926 08:59:07.042"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:06.830" endtime="20200926 08:59:07.042"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:00.860" endtime="20200926 08:59:07.042"></status>
+</kw>
+<kw name="Navigate to Weather Report Page" library="ndtv_weather_page_keywords">
+<doc>Keyword used to navigate to Weather Report Page of NDTV site</doc>
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:07.044" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 08:59:07.043" endtime="20200926 08:59:19.399"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:07.043" endtime="20200926 08:59:19.399"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 08:59:19.401" endtime="20200926 08:59:19.480"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:19.531" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 08:59:19.480" endtime="20200926 08:59:19.531"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:19.400" endtime="20200926 08:59:19.531"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:07.043" endtime="20200926 08:59:19.532"></status>
+</kw>
+<kw name="Click SubMenu Icon" library="ndtv_main_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:19.559" level="INFO">Current page contains element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 08:59:19.533" endtime="20200926 08:59:19.559"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:19.560" level="INFO">Clicking element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 08:59:19.560" endtime="20200926 08:59:19.864"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:19.907" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 08:59:19.865" endtime="20200926 08:59:19.907"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:19.532" endtime="20200926 08:59:19.908"></status>
+</kw>
+<kw name="Go To Weather Menu" library="ndtv_weather_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:19.949" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 08:59:19.909" endtime="20200926 08:59:19.949"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:19.950" level="INFO">Clicking element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 08:59:19.950" endtime="20200926 08:59:20.491"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:19.908" endtime="20200926 08:59:20.492"></status>
+</kw>
+<kw name="Assert Weather Page Has Rendered Fully" library="ndtv_weather_page_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${weather_page_title_img}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 08:59:20.494" endtime="20200926 08:59:21.163"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 08:59:21.164" endtime="20200926 08:59:21.334"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:21.359" level="INFO">Current page contains element 'id=map_canvas'.</msg>
+<status status="PASS" starttime="20200926 08:59:21.334" endtime="20200926 08:59:21.359"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:20.493" endtime="20200926 08:59:21.359"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:07.042" endtime="20200926 08:59:21.360"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200926 08:59:21.363" endtime="20200926 08:59:25.502"></status>
+</kw>
+<tags>
+<tag>TC02</tag>
+</tags>
+<status status="PASS" starttime="20200926 08:59:00.859" endtime="20200926 08:59:25.503" critical="yes"></status>
+</test>
+<test id="s1-t3" name="TC03 Validate Weather Report Page Elements">
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:25.506" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 08:59:25.506" endtime="20200926 08:59:32.606"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:25.506" endtime="20200926 08:59:32.606"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 08:59:32.608" endtime="20200926 08:59:33.014"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:33.043" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 08:59:33.014" endtime="20200926 08:59:33.044"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:32.607" endtime="20200926 08:59:33.044"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:25.505" endtime="20200926 08:59:33.044"></status>
+</kw>
+<kw name="Navigate to Weather Report Page" library="ndtv_weather_page_keywords">
+<doc>Keyword used to navigate to Weather Report Page of NDTV site</doc>
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:33.046" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 08:59:33.046" endtime="20200926 08:59:43.142"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:33.045" endtime="20200926 08:59:43.143"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 08:59:43.144" endtime="20200926 08:59:43.905"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:44.068" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 08:59:43.905" endtime="20200926 08:59:44.068"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:43.143" endtime="20200926 08:59:44.069"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:33.045" endtime="20200926 08:59:44.069"></status>
+</kw>
+<kw name="Click SubMenu Icon" library="ndtv_main_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:44.142" level="INFO">Current page contains element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 08:59:44.070" endtime="20200926 08:59:44.142"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:44.143" level="INFO">Clicking element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 08:59:44.143" endtime="20200926 08:59:44.610"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:44.672" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 08:59:44.611" endtime="20200926 08:59:44.672"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:44.069" endtime="20200926 08:59:44.673"></status>
+</kw>
+<kw name="Go To Weather Menu" library="ndtv_weather_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:44.712" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 08:59:44.674" endtime="20200926 08:59:44.712"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:44.713" level="INFO">Clicking element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 08:59:44.713" endtime="20200926 08:59:45.545"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:44.673" endtime="20200926 08:59:45.546"></status>
+</kw>
+<kw name="Assert Weather Page Has Rendered Fully" library="ndtv_weather_page_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${weather_page_title_img}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 08:59:45.547" endtime="20200926 08:59:46.180"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 08:59:46.181" endtime="20200926 08:59:46.385"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:46.562" level="INFO">Current page contains element 'id=map_canvas'.</msg>
+<status status="PASS" starttime="20200926 08:59:46.385" endtime="20200926 08:59:46.562"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:45.546" endtime="20200926 08:59:46.563"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:59:33.045" endtime="20200926 08:59:46.563"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${pin_city_logo}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:46.607" level="INFO">Current page contains element 'xpath://img[@src='./images/ndtv_logo.png']'.</msg>
+<status status="PASS" starttime="20200926 08:59:46.568" endtime="20200926 08:59:46.607"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${pin_your_city_msg}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:46.739" level="INFO">Current page contains element 'xpath://span[@class='message_holder_header'][contains(.,'Pin your City')]'.</msg>
+<status status="PASS" starttime="20200926 08:59:46.613" endtime="20200926 08:59:46.739"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${reset_icon_id}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:46.777" level="INFO">Current page contains element 'id=icon_holder'.</msg>
+<status status="PASS" starttime="20200926 08:59:46.742" endtime="20200926 08:59:46.777"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${search_box_id}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:46.819" level="INFO">Current page contains element 'id=searchBox'.</msg>
+<status status="PASS" starttime="20200926 08:59:46.778" endtime="20200926 08:59:46.819"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${cityList_parent_element}</arg>
+</arguments>
+<msg timestamp="20200926 08:59:46.853" level="INFO">Current page contains element 'css=#messages'.</msg>
+<status status="PASS" starttime="20200926 08:59:46.820" endtime="20200926 08:59:46.853"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200926 08:59:46.854" endtime="20200926 08:59:49.912"></status>
+</kw>
+<tags>
+<tag>TC03</tag>
+</tags>
+<status status="PASS" starttime="20200926 08:59:25.505" endtime="20200926 08:59:49.913" critical="yes"></status>
+</test>
+<test id="s1-t4" name="TC04 Search by a Valid Pin City Name">
 <kw name="Perform Search By City Action" library="ndtv_weather_page_keywords">
 <doc>This will perform search action by city name
 Given input param: City Name in String</doc>
 <arguments>
-<arg>Tokyo</arg>
+<arg>${non_default_city_name}</arg>
+<arg>${IS_DEFAULT_CITY_VALUE}</arg>
 </arguments>
 <kw name="Navigate to Weather Report Page" library="ndtv_weather_page_keywords">
 <doc>Keyword used to navigate to Weather Report Page of NDTV site</doc>
@@ -19,10 +422,10 @@ Given input param: City Name in String</doc>
 <arg>${ndtv_url}</arg>
 <arg>${Browser}</arg>
 </arguments>
-<msg timestamp="20200926 01:42:11.700" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
-<status status="PASS" starttime="20200926 01:42:11.699" endtime="20200926 01:42:17.559"></status>
+<msg timestamp="20200926 08:59:49.918" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 08:59:49.917" endtime="20200926 08:59:58.766"></status>
 </kw>
-<status status="PASS" starttime="20200926 01:42:11.699" endtime="20200926 01:42:17.559"></status>
+<status status="PASS" starttime="20200926 08:59:49.917" endtime="20200926 08:59:58.767"></status>
 </kw>
 <kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
 <doc>Check whether the current page is the NDTV Main Page with its title</doc>
@@ -32,19 +435,19 @@ Given input param: City Name in String</doc>
 <arg>${ndtv_page_title}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 </arguments>
-<status status="PASS" starttime="20200926 01:42:17.560" endtime="20200926 01:42:17.573"></status>
+<status status="PASS" starttime="20200926 08:59:58.768" endtime="20200926 08:59:58.859"></status>
 </kw>
 <kw name="Page Should Contain Image" library="SeleniumLibrary">
 <doc>Verifies image identified by ``locator`` is found from current page.</doc>
 <arguments>
 <arg>${ndtv_page_logo}</arg>
 </arguments>
-<msg timestamp="20200926 01:42:17.591" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
-<status status="PASS" starttime="20200926 01:42:17.573" endtime="20200926 01:42:17.592"></status>
+<msg timestamp="20200926 08:59:58.915" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 08:59:58.860" endtime="20200926 08:59:58.916"></status>
 </kw>
-<status status="PASS" starttime="20200926 01:42:17.559" endtime="20200926 01:42:17.592"></status>
+<status status="PASS" starttime="20200926 08:59:58.767" endtime="20200926 08:59:58.916"></status>
 </kw>
-<status status="PASS" starttime="20200926 01:42:11.699" endtime="20200926 01:42:17.592"></status>
+<status status="PASS" starttime="20200926 08:59:49.917" endtime="20200926 08:59:58.917"></status>
 </kw>
 <kw name="Click SubMenu Icon" library="ndtv_main_page_keywords">
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
@@ -52,26 +455,26 @@ Given input param: City Name in String</doc>
 <arguments>
 <arg>${ndtv_page_submenu}</arg>
 </arguments>
-<msg timestamp="20200926 01:42:17.628" level="INFO">Current page contains element 'id=h_sub_menu'.</msg>
-<status status="PASS" starttime="20200926 01:42:17.593" endtime="20200926 01:42:17.628"></status>
+<msg timestamp="20200926 08:59:58.939" level="INFO">Current page contains element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 08:59:58.917" endtime="20200926 08:59:58.939"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${ndtv_page_submenu}</arg>
 </arguments>
-<msg timestamp="20200926 01:42:17.629" level="INFO">Clicking element 'id=h_sub_menu'.</msg>
-<status status="PASS" starttime="20200926 01:42:17.629" endtime="20200926 01:42:17.740"></status>
+<msg timestamp="20200926 08:59:58.940" level="INFO">Clicking element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 08:59:58.939" endtime="20200926 08:59:59.281"></status>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
 <arg>${weather_page_xpath}</arg>
 </arguments>
-<msg timestamp="20200926 01:42:17.773" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
-<status status="PASS" starttime="20200926 01:42:17.740" endtime="20200926 01:42:17.773"></status>
+<msg timestamp="20200926 08:59:59.357" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 08:59:59.282" endtime="20200926 08:59:59.358"></status>
 </kw>
-<status status="PASS" starttime="20200926 01:42:17.592" endtime="20200926 01:42:17.774"></status>
+<status status="PASS" starttime="20200926 08:59:58.917" endtime="20200926 08:59:59.358"></status>
 </kw>
 <kw name="Go To Weather Menu" library="ndtv_weather_page_keywords">
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
@@ -79,18 +482,18 @@ Given input param: City Name in String</doc>
 <arguments>
 <arg>${weather_page_xpath}</arg>
 </arguments>
-<msg timestamp="20200926 01:42:17.791" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
-<status status="PASS" starttime="20200926 01:42:17.774" endtime="20200926 01:42:17.791"></status>
+<msg timestamp="20200926 08:59:59.409" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 08:59:59.359" endtime="20200926 08:59:59.409"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${weather_page_xpath}</arg>
 </arguments>
-<msg timestamp="20200926 01:42:17.791" level="INFO">Clicking element 'xpath://a[contains(.,'WEATHER')]'.</msg>
-<status status="PASS" starttime="20200926 01:42:17.791" endtime="20200926 01:42:18.309"></status>
+<msg timestamp="20200926 08:59:59.410" level="INFO">Clicking element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 08:59:59.409" endtime="20200926 08:59:59.956"></status>
 </kw>
-<status status="PASS" starttime="20200926 01:42:17.774" endtime="20200926 01:42:18.309"></status>
+<status status="PASS" starttime="20200926 08:59:59.358" endtime="20200926 08:59:59.956"></status>
 </kw>
 <kw name="Assert Weather Page Has Rendered Fully" library="ndtv_weather_page_keywords">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -98,7 +501,7 @@ Given input param: City Name in String</doc>
 <arguments>
 <arg>${weather_page_title_img}</arg>
 </arguments>
-<status status="PASS" starttime="20200926 01:42:18.310" endtime="20200926 01:42:19.450"></status>
+<status status="PASS" starttime="20200926 08:59:59.957" endtime="20200926 09:00:00.629"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
@@ -106,27 +509,27 @@ Given input param: City Name in String</doc>
 <arg>${map_img}</arg>
 <arg>timeout=${TIMEOUT}</arg>
 </arguments>
-<status status="PASS" starttime="20200926 01:42:19.451" endtime="20200926 01:42:19.734"></status>
+<status status="PASS" starttime="20200926 09:00:00.630" endtime="20200926 09:00:00.820"></status>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
 <arg>${map_img}</arg>
 </arguments>
-<msg timestamp="20200926 01:42:19.741" level="INFO">Current page contains element 'id=map_canvas'.</msg>
-<status status="PASS" starttime="20200926 01:42:19.734" endtime="20200926 01:42:19.741"></status>
+<msg timestamp="20200926 09:00:00.931" level="INFO">Current page contains element 'id=map_canvas'.</msg>
+<status status="PASS" starttime="20200926 09:00:00.820" endtime="20200926 09:00:00.932"></status>
 </kw>
-<status status="PASS" starttime="20200926 01:42:18.309" endtime="20200926 01:42:19.741"></status>
+<status status="PASS" starttime="20200926 08:59:59.957" endtime="20200926 09:00:00.932"></status>
 </kw>
-<status status="PASS" starttime="20200926 01:42:11.699" endtime="20200926 01:42:19.741"></status>
+<status status="PASS" starttime="20200926 08:59:49.916" endtime="20200926 09:00:00.932"></status>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
 <arguments>
 <arg>${cityList_parent_element}</arg>
 </arguments>
-<msg timestamp="20200926 01:42:19.750" level="INFO">Current page contains element 'css=#messages'.</msg>
-<status status="PASS" starttime="20200926 01:42:19.741" endtime="20200926 01:42:19.750"></status>
+<msg timestamp="20200926 09:00:00.959" level="INFO">Current page contains element 'css=#messages'.</msg>
+<status status="PASS" starttime="20200926 09:00:00.933" endtime="20200926 09:00:00.960"></status>
 </kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
 <doc>Returns the number of elements matching ``locator``.</doc>
@@ -136,8 +539,8 @@ Given input param: City Name in String</doc>
 <assign>
 <var>${listCount}</var>
 </assign>
-<msg timestamp="20200926 01:42:19.762" level="INFO">${listCount} = 86</msg>
-<status status="PASS" starttime="20200926 01:42:19.750" endtime="20200926 01:42:19.762"></status>
+<msg timestamp="20200926 09:00:01.005" level="INFO">${listCount} = 86</msg>
+<status status="PASS" starttime="20200926 09:00:00.960" endtime="20200926 09:00:01.005"></status>
 </kw>
 <kw name="Should Be Equal As Integers" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to integers.</doc>
@@ -145,18 +548,47 @@ Given input param: City Name in String</doc>
 <arg>${listCount}</arg>
 <arg>${cityCountValue}</arg>
 </arguments>
-<msg timestamp="20200926 01:42:19.762" level="INFO">Argument types are:
+<msg timestamp="20200926 09:00:01.007" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20200926 01:42:19.762" endtime="20200926 01:42:19.763"></status>
+<status status="PASS" starttime="20200926 09:00:01.006" endtime="20200926 09:00:01.007"></status>
 </kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:01.007" endtime="20200926 09:00:01.076"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${full_map_page}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:01.076" endtime="20200926 09:00:01.126"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultValue}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultValue}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
 <arguments>
 <arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
 </arguments>
-<msg timestamp="20200926 01:42:19.789" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Tokyo')]' did not exist.</msg>
-<status status="PASS" starttime="20200926 01:42:19.763" endtime="20200926 01:42:19.789"></status>
+<msg timestamp="20200926 09:00:01.150" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Amritsar')]' did not exist.</msg>
+<status status="PASS" starttime="20200926 09:00:01.127" endtime="20200926 09:00:01.150"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:01.126" endtime="20200926 09:00:01.150"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -164,8 +596,8 @@ Given input param: City Name in String</doc>
 <arg>${search_box_id}</arg>
 <arg>${CityName}</arg>
 </arguments>
-<msg timestamp="20200926 01:42:19.790" level="INFO">Typing text 'Tokyo' into text field 'id=searchBox'.</msg>
-<status status="PASS" starttime="20200926 01:42:19.789" endtime="20200926 01:42:19.865"></status>
+<msg timestamp="20200926 09:00:01.152" level="INFO">Typing text 'Amritsar' into text field 'id=searchBox'.</msg>
+<status status="PASS" starttime="20200926 09:00:01.151" endtime="20200926 09:00:01.397"></status>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
@@ -173,34 +605,45 @@ Given input param: City Name in String</doc>
 <arg>${search_box_id}</arg>
 <arg>ENTER</arg>
 </arguments>
-<msg timestamp="20200926 01:42:19.865" level="INFO">Sending key(s) ('ENTER',) to id=searchBox element.</msg>
-<msg timestamp="20200926 01:42:20.161" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20200926 01:42:20.161" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20200926 01:42:19.865" endtime="20200926 01:42:20.185"></status>
+<msg timestamp="20200926 09:00:01.398" level="INFO">Sending key(s) ('ENTER',) to id=searchBox element.</msg>
+<msg timestamp="20200926 09:00:01.727" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20200926 09:00:01.727" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20200926 09:00:01.398" endtime="20200926 09:00:01.733"></status>
 </kw>
-<status status="PASS" starttime="20200926 01:42:11.698" endtime="20200926 01:42:20.185"></status>
+<status status="PASS" starttime="20200926 08:59:49.916" endtime="20200926 09:00:01.734"></status>
 </kw>
-<kw name="Verify Search By City Name for an InValid Input" library="ndtv_weather_page_keywords">
-<doc>This will find city name is Not available in the web page/map
+<kw name="Verify City Elements Visibility upon Search Action" library="ndtv_weather_page_keywords">
+<doc>This will find city name is available in the web page/map
 Given input param: City Name in String</doc>
 <arguments>
-<arg>Tokyo</arg>
+<arg>${non_default_city_name}</arg>
+<arg>${IS_DEFAULT_CITY_VALUE}</arg>
 </arguments>
-<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>xpath=//label[@for='${CityName}'][contains(.,'${CityName}')]</arg>
-</arguments>
-<msg timestamp="20200926 01:42:20.202" level="INFO">Current page does not contain element 'xpath=//label[@for='Tokyo'][contains(.,'Tokyo')]'.</msg>
-<status status="PASS" starttime="20200926 01:42:20.187" endtime="20200926 01:42:20.203"></status>
-</kw>
-<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE If</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
 <arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
 </arguments>
-<msg timestamp="20200926 01:42:20.213" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Tokyo')]' did not exist.</msg>
-<status status="PASS" starttime="20200926 01:42:20.203" endtime="20200926 01:42:20.213"></status>
+<status status="PASS" starttime="20200926 09:00:01.735" endtime="20200926 09:00:01.735"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//label[@for='${CityName}'][contains(.,'${CityName}')]</arg>
+<arg>ELSE If</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Validate Pin City data upon Selection</arg>
+<arg>${CityName}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:01.736" endtime="20200926 09:00:01.736"></status>
 </kw>
 <kw name="Perform Reset Button Click Action" library="ndtv_weather_page_keywords" type="teardown">
 <doc>This will reset the selection of city name from the list to default values
@@ -210,34 +653,1966 @@ input param: City Name in String</doc>
 <arguments>
 <arg>${reset_icon_id}</arg>
 </arguments>
-<msg timestamp="20200926 01:42:20.214" level="INFO">Clicking element 'id=icon_holder'.</msg>
-<status status="PASS" starttime="20200926 01:42:20.214" endtime="20200926 01:42:20.280"></status>
+<msg timestamp="20200926 09:00:01.738" level="INFO">Clicking element 'id=icon_holder'.</msg>
+<status status="PASS" starttime="20200926 09:00:01.737" endtime="20200926 09:00:01.802"></status>
 </kw>
-<status status="PASS" starttime="20200926 01:42:20.213" endtime="20200926 01:42:20.280"></status>
+<status status="PASS" starttime="20200926 09:00:01.736" endtime="20200926 09:00:01.803"></status>
 </kw>
-<status status="PASS" starttime="20200926 01:42:20.186" endtime="20200926 01:42:20.280"></status>
+<status status="PASS" starttime="20200926 09:00:01.734" endtime="20200926 09:00:01.803"></status>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200926 01:42:20.280" endtime="20200926 01:42:22.602"></status>
+<status status="PASS" starttime="20200926 09:00:01.803" endtime="20200926 09:00:04.492"></status>
+</kw>
+<tags>
+<tag>TC04</tag>
+</tags>
+<status status="PASS" starttime="20200926 08:59:49.915" endtime="20200926 09:00:04.493" critical="yes"></status>
+</test>
+<test id="s1-t5" name="TC05 Search by an InValid Pin City Name">
+<kw name="Perform Search By City Action" library="ndtv_weather_page_keywords">
+<doc>This will perform search action by city name
+Given input param: City Name in String</doc>
+<arguments>
+<arg>${invalid_city_name}</arg>
+<arg>${IS_DEFAULT_CITY_VALUE}</arg>
+</arguments>
+<kw name="Navigate to Weather Report Page" library="ndtv_weather_page_keywords">
+<doc>Keyword used to navigate to Weather Report Page of NDTV site</doc>
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:04.498" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 09:00:04.498" endtime="20200926 09:00:13.753"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:04.497" endtime="20200926 09:00:13.753"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:13.756" endtime="20200926 09:00:13.898"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:14.011" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 09:00:13.898" endtime="20200926 09:00:14.012"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:13.754" endtime="20200926 09:00:14.013"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:04.497" endtime="20200926 09:00:14.014"></status>
+</kw>
+<kw name="Click SubMenu Icon" library="ndtv_main_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:14.074" level="INFO">Current page contains element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:00:14.015" endtime="20200926 09:00:14.075"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:14.076" level="INFO">Clicking element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:00:14.075" endtime="20200926 09:00:14.502"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:14.582" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:00:14.503" endtime="20200926 09:00:14.582"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:14.014" endtime="20200926 09:00:14.583"></status>
+</kw>
+<kw name="Go To Weather Menu" library="ndtv_weather_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:14.614" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:00:14.584" endtime="20200926 09:00:14.615"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:14.615" level="INFO">Clicking element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:00:14.615" endtime="20200926 09:00:15.298"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:14.583" endtime="20200926 09:00:15.298"></status>
+</kw>
+<kw name="Assert Weather Page Has Rendered Fully" library="ndtv_weather_page_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${weather_page_title_img}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:15.302" endtime="20200926 09:00:16.378"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:16.379" endtime="20200926 09:00:16.404"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:16.470" level="INFO">Current page contains element 'id=map_canvas'.</msg>
+<status status="PASS" starttime="20200926 09:00:16.405" endtime="20200926 09:00:16.470"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:15.300" endtime="20200926 09:00:16.471"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:04.496" endtime="20200926 09:00:16.471"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${cityList_parent_element}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:16.514" level="INFO">Current page contains element 'css=#messages'.</msg>
+<status status="PASS" starttime="20200926 09:00:16.471" endtime="20200926 09:00:16.515"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${cityList_dropdown_element}</arg>
+</arguments>
+<assign>
+<var>${listCount}</var>
+</assign>
+<msg timestamp="20200926 09:00:16.545" level="INFO">${listCount} = 86</msg>
+<status status="PASS" starttime="20200926 09:00:16.515" endtime="20200926 09:00:16.545"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${listCount}</arg>
+<arg>${cityCountValue}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:16.546" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20200926 09:00:16.545" endtime="20200926 09:00:16.546"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:16.547" endtime="20200926 09:00:16.604"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${full_map_page}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:16.605" endtime="20200926 09:00:16.646"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultValue}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultValue}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:00:16.668" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Tokyo')]' did not exist.</msg>
+<status status="PASS" starttime="20200926 09:00:16.647" endtime="20200926 09:00:16.668"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:16.646" endtime="20200926 09:00:16.668"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_box_id}</arg>
+<arg>${CityName}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:16.669" level="INFO">Typing text 'Tokyo' into text field 'id=searchBox'.</msg>
+<status status="PASS" starttime="20200926 09:00:16.668" endtime="20200926 09:00:16.913"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${search_box_id}</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20200926 09:00:16.914" level="INFO">Sending key(s) ('ENTER',) to id=searchBox element.</msg>
+<msg timestamp="20200926 09:00:17.203" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20200926 09:00:17.204" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20200926 09:00:16.913" endtime="20200926 09:00:17.211"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:04.496" endtime="20200926 09:00:17.211"></status>
+</kw>
+<kw name="Verify City Elements Visibility upon Search Action" library="ndtv_weather_page_keywords">
+<doc>This will find city name is available in the web page/map
+Given input param: City Name in String</doc>
+<arguments>
+<arg>${invalid_city_name}</arg>
+<arg>${IS_DEFAULT_CITY_VALUE}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE If</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:17.213" endtime="20200926 09:00:17.214"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//label[@for='${CityName}'][contains(.,'${CityName}')]</arg>
+<arg>ELSE If</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Validate Pin City data upon Selection</arg>
+<arg>${CityName}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:17.214" endtime="20200926 09:00:17.215"></status>
+</kw>
+<kw name="Perform Reset Button Click Action" library="ndtv_weather_page_keywords" type="teardown">
+<doc>This will reset the selection of city name from the list to default values
+input param: City Name in String</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${reset_icon_id}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:17.217" level="INFO">Clicking element 'id=icon_holder'.</msg>
+<status status="PASS" starttime="20200926 09:00:17.217" endtime="20200926 09:00:17.291"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:17.216" endtime="20200926 09:00:17.291"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:17.212" endtime="20200926 09:00:17.292"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200926 09:00:17.293" endtime="20200926 09:00:19.908"></status>
 </kw>
 <tags>
 <tag>TC05</tag>
 </tags>
-<status status="PASS" starttime="20200926 01:42:11.697" endtime="20200926 01:42:22.603" critical="yes"></status>
+<status status="PASS" starttime="20200926 09:00:04.495" endtime="20200926 09:00:19.908" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20200926 01:42:11.152" endtime="20200926 01:42:22.608"></status>
+<test id="s1-t6" name="TC06 Search by a default Pin City Name">
+<kw name="Perform Search By City Action" library="ndtv_weather_page_keywords">
+<doc>This will perform search action by city name
+Given input param: City Name in String</doc>
+<arguments>
+<arg>${default_city_name}</arg>
+<arg>Y</arg>
+</arguments>
+<kw name="Navigate to Weather Report Page" library="ndtv_weather_page_keywords">
+<doc>Keyword used to navigate to Weather Report Page of NDTV site</doc>
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:19.913" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 09:00:19.913" endtime="20200926 09:00:27.397"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:19.912" endtime="20200926 09:00:27.397"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:27.399" endtime="20200926 09:00:27.541"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:27.606" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 09:00:27.542" endtime="20200926 09:00:27.607"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:27.398" endtime="20200926 09:00:27.607"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:19.912" endtime="20200926 09:00:27.607"></status>
+</kw>
+<kw name="Click SubMenu Icon" library="ndtv_main_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:27.633" level="INFO">Current page contains element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:00:27.608" endtime="20200926 09:00:27.633"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:27.634" level="INFO">Clicking element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:00:27.633" endtime="20200926 09:00:27.864"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:27.941" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:00:27.865" endtime="20200926 09:00:27.942"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:27.608" endtime="20200926 09:00:27.943"></status>
+</kw>
+<kw name="Go To Weather Menu" library="ndtv_weather_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:27.974" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:00:27.944" endtime="20200926 09:00:27.974"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:27.975" level="INFO">Clicking element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:00:27.975" endtime="20200926 09:00:28.322"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:27.943" endtime="20200926 09:00:28.322"></status>
+</kw>
+<kw name="Assert Weather Page Has Rendered Fully" library="ndtv_weather_page_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${weather_page_title_img}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:28.323" endtime="20200926 09:00:28.569"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:28.569" endtime="20200926 09:00:28.902"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:28.915" level="INFO">Current page contains element 'id=map_canvas'.</msg>
+<status status="PASS" starttime="20200926 09:00:28.902" endtime="20200926 09:00:28.915"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:28.323" endtime="20200926 09:00:28.916"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:19.911" endtime="20200926 09:00:28.916"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${cityList_parent_element}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:28.930" level="INFO">Current page contains element 'css=#messages'.</msg>
+<status status="PASS" starttime="20200926 09:00:28.916" endtime="20200926 09:00:28.930"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${cityList_dropdown_element}</arg>
+</arguments>
+<assign>
+<var>${listCount}</var>
+</assign>
+<msg timestamp="20200926 09:00:28.947" level="INFO">${listCount} = 86</msg>
+<status status="PASS" starttime="20200926 09:00:28.930" endtime="20200926 09:00:28.947"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${listCount}</arg>
+<arg>${cityCountValue}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:28.948" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20200926 09:00:28.947" endtime="20200926 09:00:28.948"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:28.948" endtime="20200926 09:00:28.970"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${full_map_page}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:28.970" endtime="20200926 09:00:29.419"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultValue}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultValue}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:00:29.449" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Bengaluru')]' is displayed.</msg>
+<status status="PASS" starttime="20200926 09:00:29.420" endtime="20200926 09:00:29.449"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:29.419" endtime="20200926 09:00:29.449"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_box_id}</arg>
+<arg>${CityName}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:29.450" level="INFO">Typing text 'Bengaluru' into text field 'id=searchBox'.</msg>
+<status status="PASS" starttime="20200926 09:00:29.449" endtime="20200926 09:00:29.629"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${search_box_id}</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20200926 09:00:29.631" level="INFO">Sending key(s) ('ENTER',) to id=searchBox element.</msg>
+<msg timestamp="20200926 09:00:29.909" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20200926 09:00:29.909" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20200926 09:00:29.629" endtime="20200926 09:00:29.914"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:19.911" endtime="20200926 09:00:29.914"></status>
+</kw>
+<kw name="Verify City Elements Visibility upon Search Action" library="ndtv_weather_page_keywords">
+<doc>This will find city name is available in the web page/map
+Given input param: City Name in String</doc>
+<arguments>
+<arg>${default_city_name}</arg>
+<arg>${IS_DEFAULT_CITY_VALUE}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE If</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:29.915" endtime="20200926 09:00:29.915"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//label[@for='${CityName}'][contains(.,'${CityName}')]</arg>
+<arg>ELSE If</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Validate Pin City data upon Selection</arg>
+<arg>${CityName}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:29.916" endtime="20200926 09:00:29.916"></status>
+</kw>
+<kw name="Perform Reset Button Click Action" library="ndtv_weather_page_keywords" type="teardown">
+<doc>This will reset the selection of city name from the list to default values
+input param: City Name in String</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${reset_icon_id}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:29.917" level="INFO">Clicking element 'id=icon_holder'.</msg>
+<status status="PASS" starttime="20200926 09:00:29.916" endtime="20200926 09:00:30.013"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:29.916" endtime="20200926 09:00:30.013"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:29.914" endtime="20200926 09:00:30.014"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200926 09:00:30.015" endtime="20200926 09:00:32.536"></status>
+</kw>
+<tags>
+<tag>TC06</tag>
+</tags>
+<status status="PASS" starttime="20200926 09:00:19.910" endtime="20200926 09:00:32.536" critical="yes"></status>
+</test>
+<test id="s1-t7" name="TC07 Temperature Values are available in map for a default city name">
+<kw name="Perform Search By City Action" library="ndtv_weather_page_keywords">
+<doc>This will perform search action by city name
+Given input param: City Name in String</doc>
+<arguments>
+<arg>${default_city_name}</arg>
+<arg>Y</arg>
+</arguments>
+<kw name="Navigate to Weather Report Page" library="ndtv_weather_page_keywords">
+<doc>Keyword used to navigate to Weather Report Page of NDTV site</doc>
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:32.540" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 09:00:32.540" endtime="20200926 09:00:40.626"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:32.540" endtime="20200926 09:00:40.627"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:40.628" endtime="20200926 09:00:40.833"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:40.888" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 09:00:40.834" endtime="20200926 09:00:40.889"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:40.627" endtime="20200926 09:00:40.889"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:32.539" endtime="20200926 09:00:40.890"></status>
+</kw>
+<kw name="Click SubMenu Icon" library="ndtv_main_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:41.104" level="INFO">Current page contains element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:00:40.891" endtime="20200926 09:00:41.104"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:41.105" level="INFO">Clicking element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:00:41.105" endtime="20200926 09:00:41.331"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:41.355" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:00:41.331" endtime="20200926 09:00:41.355"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:40.890" endtime="20200926 09:00:41.355"></status>
+</kw>
+<kw name="Go To Weather Menu" library="ndtv_weather_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:41.368" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:00:41.356" endtime="20200926 09:00:41.368"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:41.368" level="INFO">Clicking element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:00:41.368" endtime="20200926 09:00:41.592"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:41.355" endtime="20200926 09:00:41.592"></status>
+</kw>
+<kw name="Assert Weather Page Has Rendered Fully" library="ndtv_weather_page_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${weather_page_title_img}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:41.593" endtime="20200926 09:00:42.057"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:42.057" endtime="20200926 09:00:42.078"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:42.191" level="INFO">Current page contains element 'id=map_canvas'.</msg>
+<status status="PASS" starttime="20200926 09:00:42.079" endtime="20200926 09:00:42.191"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:41.593" endtime="20200926 09:00:42.192"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:32.539" endtime="20200926 09:00:42.193"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${cityList_parent_element}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:42.208" level="INFO">Current page contains element 'css=#messages'.</msg>
+<status status="PASS" starttime="20200926 09:00:42.193" endtime="20200926 09:00:42.208"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${cityList_dropdown_element}</arg>
+</arguments>
+<assign>
+<var>${listCount}</var>
+</assign>
+<msg timestamp="20200926 09:00:42.229" level="INFO">${listCount} = 86</msg>
+<status status="PASS" starttime="20200926 09:00:42.208" endtime="20200926 09:00:42.229"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${listCount}</arg>
+<arg>${cityCountValue}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:42.230" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20200926 09:00:42.229" endtime="20200926 09:00:42.230"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:42.230" endtime="20200926 09:00:42.265"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${full_map_page}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:42.266" endtime="20200926 09:00:42.717"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultValue}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultValue}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:00:42.749" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Bengaluru')]' is displayed.</msg>
+<status status="PASS" starttime="20200926 09:00:42.719" endtime="20200926 09:00:42.749"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:42.717" endtime="20200926 09:00:42.749"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_box_id}</arg>
+<arg>${CityName}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:42.750" level="INFO">Typing text 'Bengaluru' into text field 'id=searchBox'.</msg>
+<status status="PASS" starttime="20200926 09:00:42.750" endtime="20200926 09:00:42.945"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${search_box_id}</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20200926 09:00:42.946" level="INFO">Sending key(s) ('ENTER',) to id=searchBox element.</msg>
+<msg timestamp="20200926 09:00:43.250" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20200926 09:00:43.250" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20200926 09:00:42.945" endtime="20200926 09:00:43.258"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:32.539" endtime="20200926 09:00:43.258"></status>
+</kw>
+<kw name="Verify Temperature Values are Visible or not for the Pin City" library="ndtv_weather_page_keywords">
+<doc>This will find both degree and farenheit celsious values of the city name are displayed already in the map
+Given input param 01: CityName, input type: String
+Given input param 02: isDefaultCity, input type: Single Char Values either 'Y' or 'N'
+Given input param 03: isSelected, input type: Single Char Values either 'Y' or 'N'</doc>
+<arguments>
+<arg>${default_city_name}</arg>
+<arg>Y</arg>
+<arg>Y</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Run Keyword If</arg>
+<arg>'${isSearched}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isSearched}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:00:43.280" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Bengaluru')]' is displayed.</msg>
+<status status="PASS" starttime="20200926 09:00:43.260" endtime="20200926 09:00:43.280"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:43.260" endtime="20200926 09:00:43.280"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:43.259" endtime="20200926 09:00:43.280"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:00:43.302" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Bengaluru')]' is displayed.</msg>
+<status status="PASS" starttime="20200926 09:00:43.281" endtime="20200926 09:00:43.302"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:43.280" endtime="20200926 09:00:43.303"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Run Keyword If</arg>
+<arg>'${isSearched}' == 'Y'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:00:43.325" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Bengaluru')]' is displayed.</msg>
+<status status="PASS" starttime="20200926 09:00:43.304" endtime="20200926 09:00:43.325"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:43.303" endtime="20200926 09:00:43.325"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:43.259" endtime="20200926 09:00:43.325"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200926 09:00:43.326" endtime="20200926 09:00:45.888"></status>
+</kw>
+<tags>
+<tag>TC07</tag>
+</tags>
+<status status="PASS" starttime="20200926 09:00:32.538" endtime="20200926 09:00:45.888" critical="yes"></status>
+</test>
+<test id="s1-t8" name="TC08 Temperature Values are not available in map for a non-default unsearched city name">
+<kw name="Perform Search By City Action" library="ndtv_weather_page_keywords">
+<doc>This will perform search action by city name
+Given input param: City Name in String</doc>
+<arguments>
+<arg>${non_default_city_name}</arg>
+<arg>N</arg>
+</arguments>
+<kw name="Navigate to Weather Report Page" library="ndtv_weather_page_keywords">
+<doc>Keyword used to navigate to Weather Report Page of NDTV site</doc>
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:45.892" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 09:00:45.892" endtime="20200926 09:00:53.478"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:45.892" endtime="20200926 09:00:53.478"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:53.480" endtime="20200926 09:00:53.563"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:53.619" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 09:00:53.563" endtime="20200926 09:00:53.619"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:53.479" endtime="20200926 09:00:53.620"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:45.891" endtime="20200926 09:00:53.620"></status>
+</kw>
+<kw name="Click SubMenu Icon" library="ndtv_main_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:53.663" level="INFO">Current page contains element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:00:53.622" endtime="20200926 09:00:53.663"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:53.664" level="INFO">Clicking element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:00:53.663" endtime="20200926 09:00:54.022"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:54.092" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:00:54.023" endtime="20200926 09:00:54.093"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:53.621" endtime="20200926 09:00:54.093"></status>
+</kw>
+<kw name="Go To Weather Menu" library="ndtv_weather_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:54.114" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:00:54.094" endtime="20200926 09:00:54.114"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:54.115" level="INFO">Clicking element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:00:54.114" endtime="20200926 09:00:54.445"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:54.093" endtime="20200926 09:00:54.445"></status>
+</kw>
+<kw name="Assert Weather Page Has Rendered Fully" library="ndtv_weather_page_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${weather_page_title_img}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:54.447" endtime="20200926 09:00:54.844"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:54.845" endtime="20200926 09:00:55.067"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:55.080" level="INFO">Current page contains element 'id=map_canvas'.</msg>
+<status status="PASS" starttime="20200926 09:00:55.067" endtime="20200926 09:00:55.080"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:54.446" endtime="20200926 09:00:55.081"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:45.891" endtime="20200926 09:00:55.081"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${cityList_parent_element}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:55.100" level="INFO">Current page contains element 'css=#messages'.</msg>
+<status status="PASS" starttime="20200926 09:00:55.081" endtime="20200926 09:00:55.100"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${cityList_dropdown_element}</arg>
+</arguments>
+<assign>
+<var>${listCount}</var>
+</assign>
+<msg timestamp="20200926 09:00:55.231" level="INFO">${listCount} = 86</msg>
+<status status="PASS" starttime="20200926 09:00:55.100" endtime="20200926 09:00:55.231"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${listCount}</arg>
+<arg>${cityCountValue}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:55.233" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20200926 09:00:55.232" endtime="20200926 09:00:55.233"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:55.234" endtime="20200926 09:00:55.271"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${full_map_page}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:00:55.272" endtime="20200926 09:00:55.332"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultValue}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultValue}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:00:55.360" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Amritsar')]' did not exist.</msg>
+<status status="PASS" starttime="20200926 09:00:55.333" endtime="20200926 09:00:55.361"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:55.332" endtime="20200926 09:00:55.361"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_box_id}</arg>
+<arg>${CityName}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:55.361" level="INFO">Typing text 'Amritsar' into text field 'id=searchBox'.</msg>
+<status status="PASS" starttime="20200926 09:00:55.361" endtime="20200926 09:00:55.532"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${search_box_id}</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20200926 09:00:55.534" level="INFO">Sending key(s) ('ENTER',) to id=searchBox element.</msg>
+<msg timestamp="20200926 09:00:55.822" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20200926 09:00:55.822" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20200926 09:00:55.533" endtime="20200926 09:00:55.828"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:45.891" endtime="20200926 09:00:55.828"></status>
+</kw>
+<kw name="Navigate to Weather Report Page" library="ndtv_weather_page_keywords">
+<doc>Keyword used to navigate to Weather Report Page of NDTV site</doc>
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 09:00:55.830" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 09:00:55.830" endtime="20200926 09:01:03.083"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:55.829" endtime="20200926 09:01:03.083"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:03.085" endtime="20200926 09:01:03.685"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:03.723" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 09:01:03.685" endtime="20200926 09:01:03.723"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:03.084" endtime="20200926 09:01:03.724"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:55.829" endtime="20200926 09:01:03.724"></status>
+</kw>
+<kw name="Click SubMenu Icon" library="ndtv_main_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:03.761" level="INFO">Current page contains element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:01:03.725" endtime="20200926 09:01:03.761"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:03.762" level="INFO">Clicking element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:01:03.762" endtime="20200926 09:01:04.218"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:04.304" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:04.218" endtime="20200926 09:01:04.304"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:03.724" endtime="20200926 09:01:04.305"></status>
+</kw>
+<kw name="Go To Weather Menu" library="ndtv_weather_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:04.331" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:04.306" endtime="20200926 09:01:04.331"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:04.332" level="INFO">Clicking element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:04.332" endtime="20200926 09:01:04.687"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:04.305" endtime="20200926 09:01:04.688"></status>
+</kw>
+<kw name="Assert Weather Page Has Rendered Fully" library="ndtv_weather_page_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${weather_page_title_img}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:04.690" endtime="20200926 09:01:04.958"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:04.958" endtime="20200926 09:01:05.142"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:05.165" level="INFO">Current page contains element 'id=map_canvas'.</msg>
+<status status="PASS" starttime="20200926 09:01:05.142" endtime="20200926 09:01:05.165"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:04.688" endtime="20200926 09:01:05.166"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:00:55.829" endtime="20200926 09:01:05.166"></status>
+</kw>
+<kw name="Verify Temperature Values are Visible or not for the Pin City" library="ndtv_weather_page_keywords">
+<doc>This will find both degree and farenheit celsious values of the city name are displayed already in the map
+Given input param 01: CityName, input type: String
+Given input param 02: isDefaultCity, input type: Single Char Values either 'Y' or 'N'
+Given input param 03: isSelected, input type: Single Char Values either 'Y' or 'N'</doc>
+<arguments>
+<arg>${non_default_city_name}</arg>
+<arg>N</arg>
+<arg>N</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Run Keyword If</arg>
+<arg>'${isSearched}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:01:05.289" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Amritsar')]' did not exist.</msg>
+<status status="PASS" starttime="20200926 09:01:05.170" endtime="20200926 09:01:05.289"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:05.169" endtime="20200926 09:01:05.289"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:01:05.300" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Amritsar')]' did not exist.</msg>
+<status status="PASS" starttime="20200926 09:01:05.290" endtime="20200926 09:01:05.300"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:05.290" endtime="20200926 09:01:05.300"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Run Keyword If</arg>
+<arg>'${isSearched}' == 'Y'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isSearched}' == 'Y'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:05.301" endtime="20200926 09:01:05.301"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:05.300" endtime="20200926 09:01:05.301"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:05.167" endtime="20200926 09:01:05.301"></status>
+</kw>
+<kw name="Perform Reset Button Click Action" library="ndtv_weather_page_keywords" type="teardown">
+<doc>This will reset the selection of city name from the list to default values
+input param: City Name in String</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${reset_icon_id}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:05.303" level="INFO">Clicking element 'id=icon_holder'.</msg>
+<status status="PASS" starttime="20200926 09:01:05.303" endtime="20200926 09:01:05.499"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:05.302" endtime="20200926 09:01:05.499"></status>
+</kw>
+<tags>
+<tag>TC08</tag>
+</tags>
+<status status="PASS" starttime="20200926 09:00:45.890" endtime="20200926 09:01:05.519" critical="yes"></status>
+</test>
+<test id="s1-t9" name="TC09 Temperature Values are available in map for a non-default searched city name">
+<kw name="Perform Search By City Action" library="ndtv_weather_page_keywords">
+<doc>This will perform search action by city name
+Given input param: City Name in String</doc>
+<arguments>
+<arg>${non_default_city_name}</arg>
+<arg>N</arg>
+</arguments>
+<kw name="Navigate to Weather Report Page" library="ndtv_weather_page_keywords">
+<doc>Keyword used to navigate to Weather Report Page of NDTV site</doc>
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:05.529" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 09:01:05.528" endtime="20200926 09:01:13.731"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:05.527" endtime="20200926 09:01:13.731"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:13.733" endtime="20200926 09:01:13.889"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:14.023" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 09:01:13.889" endtime="20200926 09:01:14.023"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:13.732" endtime="20200926 09:01:14.024"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:05.527" endtime="20200926 09:01:14.024"></status>
+</kw>
+<kw name="Click SubMenu Icon" library="ndtv_main_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:14.150" level="INFO">Current page contains element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:01:14.026" endtime="20200926 09:01:14.150"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:14.151" level="INFO">Clicking element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:01:14.150" endtime="20200926 09:01:14.497"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:14.543" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:14.497" endtime="20200926 09:01:14.544"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:14.025" endtime="20200926 09:01:14.544"></status>
+</kw>
+<kw name="Go To Weather Menu" library="ndtv_weather_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:14.574" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:14.545" endtime="20200926 09:01:14.575"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:14.576" level="INFO">Clicking element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:14.575" endtime="20200926 09:01:14.970"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:14.544" endtime="20200926 09:01:14.971"></status>
+</kw>
+<kw name="Assert Weather Page Has Rendered Fully" library="ndtv_weather_page_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${weather_page_title_img}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:14.972" endtime="20200926 09:01:15.493"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:15.493" endtime="20200926 09:01:15.801"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:15.816" level="INFO">Current page contains element 'id=map_canvas'.</msg>
+<status status="PASS" starttime="20200926 09:01:15.802" endtime="20200926 09:01:15.816"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:14.971" endtime="20200926 09:01:15.817"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:05.526" endtime="20200926 09:01:15.817"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${cityList_parent_element}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:15.881" level="INFO">Current page contains element 'css=#messages'.</msg>
+<status status="PASS" starttime="20200926 09:01:15.818" endtime="20200926 09:01:15.881"></status>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>${cityList_dropdown_element}</arg>
+</arguments>
+<assign>
+<var>${listCount}</var>
+</assign>
+<msg timestamp="20200926 09:01:15.910" level="INFO">${listCount} = 86</msg>
+<status status="PASS" starttime="20200926 09:01:15.881" endtime="20200926 09:01:15.910"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${listCount}</arg>
+<arg>${cityCountValue}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:15.911" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20200926 09:01:15.911" endtime="20200926 09:01:15.911"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:15.911" endtime="20200926 09:01:15.945"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${full_map_page}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:15.945" endtime="20200926 09:01:15.987"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultValue}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultValue}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:01:16.011" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Amritsar')]' did not exist.</msg>
+<status status="PASS" starttime="20200926 09:01:15.988" endtime="20200926 09:01:16.011"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:15.988" endtime="20200926 09:01:16.011"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_box_id}</arg>
+<arg>${CityName}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:16.012" level="INFO">Typing text 'Amritsar' into text field 'id=searchBox'.</msg>
+<status status="PASS" starttime="20200926 09:01:16.012" endtime="20200926 09:01:16.165"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${search_box_id}</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20200926 09:01:16.167" level="INFO">Sending key(s) ('ENTER',) to id=searchBox element.</msg>
+<msg timestamp="20200926 09:01:16.444" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20200926 09:01:16.444" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20200926 09:01:16.165" endtime="20200926 09:01:16.450"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:05.524" endtime="20200926 09:01:16.450"></status>
+</kw>
+<kw name="Navigate to Weather Report Page" library="ndtv_weather_page_keywords">
+<doc>Keyword used to navigate to Weather Report Page of NDTV site</doc>
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:16.453" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 09:01:16.452" endtime="20200926 09:01:24.566"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:16.452" endtime="20200926 09:01:24.566"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:24.567" endtime="20200926 09:01:24.615"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:24.659" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 09:01:24.615" endtime="20200926 09:01:24.659"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:24.566" endtime="20200926 09:01:24.659"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:16.451" endtime="20200926 09:01:24.660"></status>
+</kw>
+<kw name="Click SubMenu Icon" library="ndtv_main_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:24.679" level="INFO">Current page contains element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:01:24.661" endtime="20200926 09:01:24.679"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:24.680" level="INFO">Clicking element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:01:24.679" endtime="20200926 09:01:24.996"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:25.081" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:24.997" endtime="20200926 09:01:25.081"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:24.660" endtime="20200926 09:01:25.082"></status>
+</kw>
+<kw name="Go To Weather Menu" library="ndtv_weather_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:25.132" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:25.083" endtime="20200926 09:01:25.132"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:25.133" level="INFO">Clicking element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:25.132" endtime="20200926 09:01:25.464"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:25.082" endtime="20200926 09:01:25.465"></status>
+</kw>
+<kw name="Assert Weather Page Has Rendered Fully" library="ndtv_weather_page_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${weather_page_title_img}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:25.466" endtime="20200926 09:01:25.873"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:25.873" endtime="20200926 09:01:26.054"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:26.066" level="INFO">Current page contains element 'id=map_canvas'.</msg>
+<status status="PASS" starttime="20200926 09:01:26.054" endtime="20200926 09:01:26.066"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:25.465" endtime="20200926 09:01:26.066"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:16.451" endtime="20200926 09:01:26.067"></status>
+</kw>
+<kw name="Verify Temperature Values are Visible or not for the Pin City" library="ndtv_weather_page_keywords">
+<doc>This will find both degree and farenheit celsious values of the city name are displayed already in the map
+Given input param 01: CityName, input type: String
+Given input param 02: isDefaultCity, input type: Single Char Values either 'Y' or 'N'
+Given input param 03: isSelected, input type: Single Char Values either 'Y' or 'N'</doc>
+<arguments>
+<arg>${non_default_city_name}</arg>
+<arg>N</arg>
+<arg>Y</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Run Keyword If</arg>
+<arg>'${isSearched}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:01:26.197" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Amritsar')]' did not exist.</msg>
+<status status="PASS" starttime="20200926 09:01:26.071" endtime="20200926 09:01:26.197"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:26.069" endtime="20200926 09:01:26.197"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:01:26.216" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Amritsar')]' did not exist.</msg>
+<status status="PASS" starttime="20200926 09:01:26.199" endtime="20200926 09:01:26.216"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:26.198" endtime="20200926 09:01:26.216"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Run Keyword If</arg>
+<arg>'${isSearched}' == 'Y'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isSearched}' == 'Y'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:01:26.253" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Amritsar')]' did not exist.</msg>
+<status status="PASS" starttime="20200926 09:01:26.218" endtime="20200926 09:01:26.254"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:26.217" endtime="20200926 09:01:26.254"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:26.216" endtime="20200926 09:01:26.254"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:26.068" endtime="20200926 09:01:26.254"></status>
+</kw>
+<kw name="Perform Reset Button Click Action" library="ndtv_weather_page_keywords" type="teardown">
+<doc>This will reset the selection of city name from the list to default values
+input param: City Name in String</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${reset_icon_id}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:26.258" level="INFO">Clicking element 'id=icon_holder'.</msg>
+<status status="PASS" starttime="20200926 09:01:26.258" endtime="20200926 09:01:26.351"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:26.256" endtime="20200926 09:01:26.352"></status>
+</kw>
+<tags>
+<tag>TC09</tag>
+</tags>
+<status status="PASS" starttime="20200926 09:01:05.522" endtime="20200926 09:01:26.353" critical="yes"></status>
+</test>
+<test id="s1-t10" name="TC10 Validate weather details upon selecting any default cities in the map">
+<kw name="Navigate to Weather Report Page" library="ndtv_weather_page_keywords">
+<doc>Keyword used to navigate to Weather Report Page of NDTV site</doc>
+<kw name="Open NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Keyword used to open NDTV URL and validate the page element</doc>
+<kw name="Open Browser to NDTV Page" library="ndtv_main_page_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ndtv_url}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:26.361" level="INFO">Opening browser 'chrome' to base url 'https://www.ndtv.com/'.</msg>
+<status status="PASS" starttime="20200926 09:01:26.360" endtime="20200926 09:01:37.554"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:26.359" endtime="20200926 09:01:37.554"></status>
+</kw>
+<kw name="Assert This Page Is NDTV Main Page" library="ndtv_main_page_keywords">
+<doc>Check whether the current page is the NDTV Main Page with its title</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_title}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:37.555" endtime="20200926 09:01:37.785"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${ndtv_page_logo}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:38.094" level="INFO">Current page contains image 'xpath:/html/body/div[2]/div/div/div/div/div[1]/a/img'.</msg>
+<status status="PASS" starttime="20200926 09:01:37.786" endtime="20200926 09:01:38.094"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:37.555" endtime="20200926 09:01:38.095"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:26.358" endtime="20200926 09:01:38.095"></status>
+</kw>
+<kw name="Click SubMenu Icon" library="ndtv_main_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:38.161" level="INFO">Current page contains element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:01:38.097" endtime="20200926 09:01:38.161"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${ndtv_page_submenu}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:38.162" level="INFO">Clicking element 'id=h_sub_menu'.</msg>
+<status status="PASS" starttime="20200926 09:01:38.161" endtime="20200926 09:01:38.701"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:38.746" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:38.702" endtime="20200926 09:01:38.747"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:38.096" endtime="20200926 09:01:38.747"></status>
+</kw>
+<kw name="Go To Weather Menu" library="ndtv_weather_page_keywords">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:38.781" level="INFO">Current page contains element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:38.749" endtime="20200926 09:01:38.781"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${weather_page_xpath}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:38.783" level="INFO">Clicking element 'xpath://a[contains(.,'WEATHER')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:38.782" endtime="20200926 09:01:39.676"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:38.748" endtime="20200926 09:01:39.677"></status>
+</kw>
+<kw name="Assert Weather Page Has Rendered Fully" library="ndtv_weather_page_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${weather_page_title_img}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:39.678" endtime="20200926 09:01:39.952"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:39.952" endtime="20200926 09:01:40.657"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${map_img}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:40.701" level="INFO">Current page contains element 'id=map_canvas'.</msg>
+<status status="PASS" starttime="20200926 09:01:40.658" endtime="20200926 09:01:40.701"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:39.677" endtime="20200926 09:01:40.702"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:26.357" endtime="20200926 09:01:40.702"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${full_map_page}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20200926 09:01:40.704" endtime="20200926 09:01:40.827"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${map_city_selector}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:40.828" level="INFO">Clicking element 'xpath://div[contains(@title,'Bengaluru')]'.</msg>
+<status status="PASS" starttime="20200926 09:01:40.827" endtime="20200926 09:01:40.964"></status>
+</kw>
+<kw name="Verify Temperature Values are Visible or not for the Pin City" library="ndtv_weather_page_keywords">
+<doc>This will find both degree and farenheit celsious values of the city name are displayed already in the map
+Given input param 01: CityName, input type: String
+Given input param 02: isDefaultCity, input type: Single Char Values either 'Y' or 'N'
+Given input param 03: isSelected, input type: Single Char Values either 'Y' or 'N'</doc>
+<arguments>
+<arg>${default_city_name}</arg>
+<arg>Y</arg>
+<arg>Y</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Run Keyword If</arg>
+<arg>'${isSearched}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isSearched}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:01:41.213" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Bengaluru')]' is displayed.</msg>
+<status status="PASS" starttime="20200926 09:01:40.969" endtime="20200926 09:01:41.213"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:40.968" endtime="20200926 09:01:41.213"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:40.967" endtime="20200926 09:01:41.213"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:01:41.241" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Bengaluru')]' is displayed.</msg>
+<status status="PASS" starttime="20200926 09:01:41.215" endtime="20200926 09:01:41.241"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:41.214" endtime="20200926 09:01:41.241"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${isDefaultCity}' == 'Y'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+<arg>ELSE IF</arg>
+<arg>'${isDefaultCity}' == 'N'</arg>
+<arg>Run Keyword If</arg>
+<arg>'${isSearched}' == 'Y'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]</arg>
+</arguments>
+<msg timestamp="20200926 09:01:41.275" level="INFO">Element 'xpath=//div[@class='outerContainer'][contains(@title,'Bengaluru')]' is displayed.</msg>
+<status status="PASS" starttime="20200926 09:01:41.242" endtime="20200926 09:01:41.276"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:41.241" endtime="20200926 09:01:41.276"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:40.965" endtime="20200926 09:01:41.276"></status>
+</kw>
+<kw name="Perform Reset Button Click Action" library="ndtv_weather_page_keywords" type="teardown">
+<doc>This will reset the selection of city name from the list to default values
+input param: City Name in String</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${reset_icon_id}</arg>
+</arguments>
+<msg timestamp="20200926 09:01:41.278" level="INFO">Clicking element 'id=icon_holder'.</msg>
+<status status="PASS" starttime="20200926 09:01:41.277" endtime="20200926 09:01:41.369"></status>
+</kw>
+<status status="PASS" starttime="20200926 09:01:41.277" endtime="20200926 09:01:41.369"></status>
+</kw>
+<tags>
+<tag>TC10</tag>
+</tags>
+<status status="PASS" starttime="20200926 09:01:26.356" endtime="20200926 09:01:41.370" critical="yes"></status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20200926 09:01:41.378" endtime="20200926 09:02:01.069"></status>
+</kw>
+<status status="PASS" starttime="20200926 08:58:50.142" endtime="20200926 09:02:01.069"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="10" fail="0">Critical Tests</stat>
+<stat pass="10" fail="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0">TC01</stat>
+<stat pass="1" fail="0">TC02</stat>
+<stat pass="1" fail="0">TC03</stat>
+<stat pass="1" fail="0">TC04</stat>
 <stat pass="1" fail="0">TC05</stat>
+<stat pass="1" fail="0">TC06</stat>
+<stat pass="1" fail="0">TC07</stat>
+<stat pass="1" fail="0">TC08</stat>
+<stat pass="1" fail="0">TC09</stat>
+<stat pass="1" fail="0">TC10</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="Sanity">Sanity</stat>
+<stat pass="10" fail="0" id="s1" name="Sanity">Sanity</stat>
 </suite>
 </statistics>
 <errors>
