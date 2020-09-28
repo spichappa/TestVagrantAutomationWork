@@ -11,6 +11,29 @@ Resource          ${CURDIR}${/}ndtv_weather_report_page_objects.robot
 ${cityCountValue}       86
 
 *** Keywords ***
+Launch NDTV Weather Report Page
+    [Documentation]  Prerequite Suite Settings Keyword and its Test Steps are as follows:
+    ...                          1. Open the Chrome Browser via Selenium is working fine.
+    ...                          2. Then Launch of the NDTV website
+    ...                          3. And navigates to the required weather report page for this test suite
+
+    Open NDTV Main Page
+    Navigate to Weather Report Page
+    Validate Weather Report Page Elements are Visible and Available for testing
+
+Validate Weather Report Page Elements are Visible and Available for testing
+    [Documentation]     Verify all major page elements of weather report page are visible and accessible
+
+    Page Should Contain Element   ${pin_city_logo}
+    Page Should Contain Element   ${pin_your_city_msg}
+    Page Should Contain Element   ${reset_icon_id}
+    Page Should Contain Element   ${search_box_id}
+    Page Should Contain Element   ${cityList_parent_element}
+    ${listCount}=    Get Element Count    ${cityList_dropdown_element}
+    Should Be Equal As Integers     ${listCount}        ${cityCountValue}
+    Wait Until Element is Visible		${map_img}      ${TIMEOUT}
+    Wait Until Element is Visible		${full_map_page}      ${TIMEOUT}
+
 Go To Weather Menu
     [Documentation]    Keyword used to Click on the Weather Menu present in the NDTV main page
 
@@ -106,8 +129,7 @@ Verify Temperature Values are Visible or not for the Pin City
     Run Keyword If      '${isDefaultCity}' == 'Y'       Element Should Be Visible       xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]
     ...     ELSE IF     '${isDefaultCity}' == 'N'       Element Should Not Be Visible       xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]
 
-Fetch Weather Details for a city
-    [Arguments]    ${CityName}
+Fetch Weather Details for a city       [Arguments]    ${CityName}
     [Documentation]    This will fetch all weather details of the city name are displayed already in the map for default Element
 
     Element Should Be Visible       xpath=//div[@class='outerContainer'][contains(@title,'${CityName}')]
@@ -133,6 +155,11 @@ Fetch Weather Details for a city
     Wait Until Keyword Succeeds		${TIMEOUT}	${RETRY}	    Element Should Be Visible     ${city_map_weather_panel}\[contains(.,'Humidity:')]
     Wait Until Keyword Succeeds		${TIMEOUT}	${RETRY}	    Element Should Be Visible     ${city_map_weather_panel}\[contains(.,'Temp in Degrees:')]
     Wait Until Keyword Succeeds		${TIMEOUT}	${RETRY}	    Element Should Be Visible     ${city_map_weather_panel}\[contains(.,'Temp in Fahrenheit:')]
+
+    ${get_temperature}=     Get Text       ${city_map_weather_panel}\[contains(.,'Temp in Degrees:')]
+    Hide Weather Pane upon clicking the close button
+#    &{city_weather_details} =	    Create Dictionary	key=${TEST_CITY_NAME}	cityName=${TEST_CITY_NAME}      cityID=${TEST_CITY_ID}      tempFahrenheit=${temperature_InFahrenheit}      tempCelsius=${temperature_InCelsius}
+    [Return]        ${get_temperature}
 
 Hide Weather Pane upon clicking the close button
     [Documentation]     It is used to hide the rendered weather details of a city when clicked again

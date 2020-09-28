@@ -17,7 +17,7 @@ Assert This Page Is NDTV Main Page
     [Documentation]    Checks whether the current page is the NDTV Main Page
     ...                and verifies the expected main page elements such as title and logo image to asser this as ndtv main page
     Wait Until Page Contains Element    ${ndtv_page_title}     timeout=${TIMEOUT}
-    Page Should Contain Image   ${ndtv_page_logo}
+    Page Should Contain Element    ${ndtv_page_submenu}
 
 Open NDTV Main Page
     [Documentation]     Keyword used to open NDTV URL and validate the essential page elements

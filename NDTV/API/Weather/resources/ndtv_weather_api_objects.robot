@@ -13,20 +13,29 @@ ${SEARCH_BY_CITY_ID_API}      id=${TEST_CITY_ID}&appid=${API_KEY}
 ${METRIC}       metric
 ${IMPERIAL}       imperial
 
-${GET_FAHRENHEIT_VALUE_API}      q=${TEST_CITY_NAME}&units=${METRIC}&appid=${API_KEY}
-${GET_CELSIUS_VALUE_API}      q=${TEST_CITY_NAME}&units=${IMPERIAL}&appid=${API_KEY}
+${GET_FAHRENHEIT_VALUE_API}      q=${TEST_CITY_NAME}&units=${IMPERIAL}&appid=${API_KEY}
+${GET_CELSIUS_VALUE_API}      q=${TEST_CITY_NAME}&units=${METRIC}&appid=${API_KEY}
 
 ${GET_DEGREE_TEMP}      q=${TEST_CITY_NAME}&appid=${API_KEY}
 
 ${HEADERS}        application/json; charset=utf-8 !
 ${API_TIMEOUT}   200
 
+#####City Weather Information Related JSON Elements##################
 ${city_name_json_path}=   $.name
 ${city_id_json_path}=   $.id
-${city_temp_celsius}=   $.main.temp
-${city_temp_fahrenheit}=   $.wind.deg
+${city_temp}=   $.main.temp
+${city_temp_min}=   $.main.temp_min
+${city_temp_max}=   $.main.temp_max
 ${city_humidity}=   $.main.humidity
-${city_humidity}=   $.main.pressure
+${city_pressure}=   $.main.pressure
+${city_wind_degree}=   $.wind.deg
+${city_weather.id}=   $.weather.id
+${city_weather.main}=   $.weather.main
+${weather.description}=     $.weather.description
+${date_value}=      $.dt
+
+
 
 
 #Manual Query

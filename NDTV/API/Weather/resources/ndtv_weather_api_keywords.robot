@@ -2,10 +2,10 @@
 Documentation   This is the Helper file or keyword file for ndtv weather report api calls
 
 Library     JSONLibrary
-Library   Collections
-Library   RequestsLibrary
-Library    BuiltIn
-Library    String
+Library     Collections
+Library     RequestsLibrary
+Library     BuiltIn
+Library     String
 
 Resource   ${CURDIR}${/}ndtv_weather_api_objects.robot
 
@@ -51,7 +51,6 @@ Fetch City ID from the response data   [Arguments]         ${responseJson}
     ${city_id}=     Convert To Integer      ${TEST_CITY_ID}
     Should Not Be Empty    ${get_city_id}
     List Should Contain Value   ${get_city_id}    ${city_id}
-
     [return]    True
 
 Fetch search data from the response json   [Arguments]         ${responseJson}         ${searchField}
@@ -59,39 +58,9 @@ Fetch search data from the response json   [Arguments]         ${responseJson}  
 
     ${get_val}=    Get Value From Json     ${responseJson}    ${searchField}
     log to console      ${get_val}
-
     Should Not Be Empty    ${get_val}
 #    Should Be Equal   ${get_val}    ${searchField}
-
-    [return]    ${get_val}
-
-Get Fahrenheit Temperature Value API Call    [Arguments]      ${TEST_CITY_VALUE}
-    ${response}=	Get Request		    ndtv_api_session      uri=None      params=${GET_FAHRENHEIT_VALUE_API}
-
-    Request Should Be Successful        ${response}
-    Dictionary Should Contain Value     ${response.json()}       ${TEST_CITY_VALUE}
-
-    ${get_city_value}=    Get Value From Json     ${response.json()}    ${city_name_json_path}
-    log to console      ${get_city_value}
-
-    Should Not Be Empty    ${get_city_value}
-    List Should Contain Value   ${get_city_value}    ${TEST_CITY_VALUE}
-
-    [return]        ${response.json()}
-
-Get Celsius Temperature Value API Call    [Arguments]      ${TEST_CITY_VALUE}
-    ${response}=	Get Request		    ndtv_api_session      uri=None      params=${GET_CELSIUS_VALUE_API}
-
-    Request Should Be Successful        ${response}
-    Dictionary Should Contain Value     ${response.json()}       ${TEST_CITY_VALUE}
-
-    ${get_city_value}=    Get Value From Json     ${response.json()}    ${city_name_json_path}
-    log to console      ${get_city_value}
-
-    Should Not Be Empty    ${get_city_value}
-    List Should Contain Value   ${get_city_value}    ${TEST_CITY_VALUE}
-
-    [return]        ${response.json()}
+    [Return]    ${get_val}
 
 API Basic Response Validation     [Arguments]         ${responseData}        ${TEST_CITY_VALUE}
     [Documentation]    This keyword is to validate the response header, body and status code contents respectively
@@ -103,8 +72,22 @@ API Basic Response Validation     [Arguments]         ${responseData}        ${T
 
     ${city_val}=    Get Value From Json     ${responseData}    ${city_name_json_path}
     log to console      ${city_val}
+    [Return]        True
 
-    [return]    True
+Fetch Weather Details from API for a City      [Arguments]     ${TEST_CITY_NAME}
+    [Documentation]     It verifies the 'search by city name' get request with given input data
+    ...     test_city_name and cross verify the response data
 
+    ${get_response}=    Search By City Name API Calls      ${TEST_CITY_NAME}         ${GET_FAHRENHEIT_VALUE_API}
+    ${temperature_InFahrenheit}=     Fetch search data from the response json      ${get_response}       ${city_temp}
 
+    ${get_response}=    Search By City Name API Calls      ${TEST_CITY_NAME}     ${GET_CELSIUS_VALUE_API}
+    ${temperature_InCelsius}=     Fetch search data from the response json      ${get_response}       ${city_temp}
+
+    &{city_weather_details} =	    Create Dictionary	key=${TEST_CITY_NAME}	cityName=${TEST_CITY_NAME}      cityID=${TEST_CITY_ID}      tempFahrenheit=${temperature_InFahrenheit}      tempCelsius=${temperature_InCelsius}
+
+    Log To Console      ${TEST_CITY_VALUE}      msg="API Call to fetch the temperature value for a city name"
+    Log To Console      ${temperature_InFahrenheit}     msg="TempF"
+    Log To Console      ${temperature_InCelsius}     msg="TempC"
+    [Return]        ${city_weather_details}
 

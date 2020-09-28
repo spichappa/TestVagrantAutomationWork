@@ -49,13 +49,7 @@ Search By InValid City ID
 Fetch Weather Fields for a Valid City Name
     [Documentation]     It verifies the 'search by city name' get request with given input data
     ...     test_city_name and cross verify the response data
-    [Tags]      sanity
-    ${get_response}=    Search By City Name API Calls      ${TEST_CITY_NAME}         ${GET_FAHRENHEIT_VALUE_API}
-    ${temperature_InFahrenheit}=     Fetch search data from the response json      ${get_response}       ${city_temp_fahrenheit}
+    [Tags]      e2e
 
-    ${get_response}=    Search By City Name API Calls      ${TEST_CITY_NAME}     ${GET_CELSIUS_VALUE_API}
-    ${temperature_InCelsius}=     Fetch search data from the response json      ${get_response}       ${city_temp_fahrenheit}
-    
-    &{city_weather_details} =	    Create Dictionary	key=${TEST_CITY_NAME}	cityName=${TEST_CITY_NAME}      cityID=${TEST_CITY_ID}      tempFahrenheit=${temperature_InFahrenheit}      tempCelsius=${temperature_InCelsius}
-#    Should Be True	${dict} == {'key': 'value', 'foo': 'bar'}
-#    [return]    ${city_weather_details}
+    ${temperature}=     Fetch Weather Details from API for a City      ${TEST_CITY_VALUE}
+    should not be empty     ${temperature}
