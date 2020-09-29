@@ -12,7 +12,8 @@ ${SEARCH_BY_CITY_NAME_API}    q=${TEST_CITY_NAME}&appid=${API_KEY}
 ${SEARCH_BY_CITY_ID_API}      id=${TEST_CITY_ID}&appid=${API_KEY}
 ${METRIC}       metric
 ${IMPERIAL}       imperial
-
+${INVALID_CITY_VALUE}   Africa
+${SEARCH_BY_INVALID_CITY_NAME_API}    q=${INVALID_CITY_VALUE}&appid=${API_KEY}
 ${GET_FAHRENHEIT_VALUE_API}      q=${TEST_CITY_NAME}&units=${IMPERIAL}&appid=${API_KEY}
 ${GET_CELSIUS_VALUE_API}      q=${TEST_CITY_NAME}&units=${METRIC}&appid=${API_KEY}
 

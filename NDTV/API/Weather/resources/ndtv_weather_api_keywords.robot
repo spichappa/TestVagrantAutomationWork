@@ -19,18 +19,16 @@ Open NDTV Weather API Session
 Default Suite Action at the end
    Delete All Sessions
 
-#Do Basic API Response Validation     [Arguments]         ${responseJson}
-#    [Documentation]    This keyword is to validate the response header, body and status code contents respectively
-#
-#    ${header_value}=		get from dictionary		${responseJson.headers}		Content-Type
-#    should be equal as strings      ${header_value}		    ${HEADERS}
+Search By City Name Query Request   [Arguments]     ${paramValue}
+    ${response}=	Get Request		    ndtv_api_session      uri=None      params=${paramValue}
+    [Return]    ${response}
 
 Search By City Name API Calls      [Arguments]     ${TEST_CITY_VALUE}       ${paramValue}=${SEARCH_BY_CITY_NAME_API}
     [Documentation]     This is to invoke get request of searching weather details for any given city
     ...     input param value:   city name
     ...     output param value:  response json
 
-    ${response}=	Get Request		    ndtv_api_session      uri=None      params=${paramValue}
+    ${response}=	Search By City Name Query Request       ${paramValue}
 
     Request Should Be Successful        ${response}
     Dictionary Should Contain Value     ${response.json()}       ${TEST_CITY_VALUE}
@@ -41,7 +39,7 @@ Search By City Name API Calls      [Arguments]     ${TEST_CITY_VALUE}       ${pa
     Should Not Be Empty    ${get_city_value}
     List Should Contain Value   ${get_city_value}    ${TEST_CITY_VALUE}
 
-    [return]        ${response.json()}
+    [Return]       ${response.json()}
 
 Fetch City ID from the response data   [Arguments]         ${responseJson}
     [Documentation]     This is to fetch the city id from the response data
@@ -61,6 +59,28 @@ Fetch search data from the response json   [Arguments]         ${responseJson}  
     Should Not Be Empty    ${get_val}
 #    Should Be Equal   ${get_val}    ${searchField}
     [Return]    ${get_val}
+
+Search By In valid City Name    [Arguments]         ${responseJson}
+    ${get_city_id}=    Search By City ID API Calls      ${TEST_CITY_ID}
+    [Return]    ${response}
+
+Verify Response for Valid inputs      [Arguments]        ${response}
+     Request Should Be Successful        ${response}
+
+Verify Response for Invalid inputs      [Arguments]        ${response}
+     ${status}=     run keyword and return status   Status Should Be  200            ${response}
+     should not be true     ${status}
+
+Verify Valid City Search Response Data
+    Request Should Be Successful        ${response}
+    Dictionary Should Contain Value     ${response.json()}       ${TEST_CITY_VALUE}
+
+    ${get_city_value}=    Get Value From Json     ${response.json()}    ${city_name_json_path}
+    log to console      ${get_city_value}
+
+    Should Not Be Empty    ${get_city_value}
+    List Should Contain Value   ${get_city_value}    ${TEST_CITY_VALUE}
+    [return]    True
 
 API Basic Response Validation     [Arguments]         ${responseData}        ${TEST_CITY_VALUE}
     [Documentation]    This keyword is to validate the response header, body and status code contents respectively
@@ -91,3 +111,8 @@ Fetch Weather Details from API for a City      [Arguments]     ${TEST_CITY_NAME}
     Log To Console      ${temperature_InCelsius}     msg="TempC"
     [Return]        ${city_weather_details}
 
+Do Basic API Response Validation     [Arguments]         ${responseJson}
+    [Documentation]    This keyword is to validate the response header, body and status code contents respectively
+
+    ${header_value}=		get from dictionary		${responseJson.headers}		Content-Type
+    should be equal as strings      ${header_value}		    ${HEADERS}

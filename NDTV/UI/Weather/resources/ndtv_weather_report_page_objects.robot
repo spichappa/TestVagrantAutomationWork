@@ -22,6 +22,9 @@ ${map_city_tempC}       xpath://span[@class='tempRedText']
 ${map_city_tempF}       xpath://span[@class='tempWhiteText']
 ${city_map_weather_panel}   xpath://div[@class='leaflet-popup-content-wrapper']
 ${weather_panel_close_button}   xpath://a[@class='leaflet-popup-close-button']
+${temp_celsius_path}        xpath://b[contains(.,'Temp in Degrees:')]
+${temp_fahrenheit_path}        xpath://b[contains(.,'Temp in Fahrenheit:')]
+${temp_humidity_path}        xpath://b[contains(.,'Humidity:')]
 
 ###########################################Scalar Values##########################################
 ${DEFAULT_CITY_NAME}        Bengaluru

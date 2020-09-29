@@ -156,10 +156,26 @@ Fetch Weather Details for a city       [Arguments]    ${CityName}
     Wait Until Keyword Succeeds		${TIMEOUT}	${RETRY}	    Element Should Be Visible     ${city_map_weather_panel}\[contains(.,'Temp in Degrees:')]
     Wait Until Keyword Succeeds		${TIMEOUT}	${RETRY}	    Element Should Be Visible     ${city_map_weather_panel}\[contains(.,'Temp in Fahrenheit:')]
 
-    ${get_temperature}=     Get Text       ${city_map_weather_panel}\[contains(.,'Temp in Degrees:')]
+    ${get_resultData}=     Get Text       ${city_map_weather_panel}\[contains(.,'Temp in Degrees:')]
+
+    ${get_celsius_text}=        Get Text    ${temp_celsius_path}
+    ${get_fahrenheit_text}=        Get Text    ${temp_fahrenheit_path}
+
     Hide Weather Pane upon clicking the close button
-#    &{city_weather_details} =	    Create Dictionary	key=${TEST_CITY_NAME}	cityName=${TEST_CITY_NAME}      cityID=${TEST_CITY_ID}      tempFahrenheit=${temperature_InFahrenheit}      tempCelsius=${temperature_InCelsius}
-    [Return]        ${get_temperature}
+
+    ${get_temperature_celsius}=    Find Temperature Value from the output       ${get_celsius_text}
+    ${get_temperature_fahrenheit}=    Find Temperature Value from the output       ${get_fahrenheit_text}
+
+#    &{city_weather_details} =	    Create Dictionary	key=${TEST_CITY_NAME}	cityName=${TEST_CITY_NAME}      cityID=${TEST_CITY_ID}      tempFahrenheit=${get_temperature_fahrenheit}      tempCelsius=${get_temperature_celsius}
+    [Return]        ${get_temperature_celsius}
+
+Find Temperature Value from the output      [Arguments]         ${inputData}
+    [Documentation]     To fetch the temperature degree value from the inputResult and return the temperature value
+
+    @{words} =	Split String	${inputData}	:
+    ${temp_val}=     Strip String        ${words[1]}
+    log to console      ${temp_val}
+    [Return]        ${temp_val}
 
 Hide Weather Pane upon clicking the close button
     [Documentation]     It is used to hide the rendered weather details of a city when clicked again

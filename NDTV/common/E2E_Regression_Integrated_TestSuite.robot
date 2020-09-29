@@ -14,8 +14,20 @@ Final Actions
     Close All Browsers
     Delete All Sessions
 
+Find temperature variance between ui and api results    [Arguments]     ${tempFromUI}       ${tempFromAPI}
+    [Documentation]     Find the variance between 2 temperature values
+
+    log to console      ${tempFromUI[0]}       msg='temp from ui'
+    log to console      ${tempFromAPI}      msg='temp from api'
+
+    ${temp_diff}=     evaluate    ${tempFromUI}-${tempFromAPI[0]}
+    ${status}=      run keyword and return status   Should Be True      ${temp_diff}<=${temp_variance_value} and ${temp_diff}>=-${temp_variance_value}
+
+    Run Keyword If	${status} == 'True'	    Log	Passed
+    Run Keyword If  ${status} == 'False' 	Log	Output contains FAIL
+
 *** Variables ***
-${temp_diff_value}       4
+${temp_variance_value}       2
 
 *** Test Cases ***
 Comparator of city temparature values from API and UI
@@ -24,12 +36,9 @@ Comparator of city temparature values from API and UI
     ${city_temperature_data_UI}=   Fetch Weather Details for a city       ${DEFAULT_CITY_NAME}
     log to console      ${city_temperature_data_UI}
 
-    ${city_temperature_data_API}=   Fetch Weather Details from API for a City   ${DEFAULT_CITY_NAME}
-    log to console      ${city_temperature_data_API}
+    ${city_data_from_API}=   Fetch Weather Details from API for a City   ${DEFAULT_CITY_NAME}
+    log to console      ${city_data_from_API}
 
-#    ${result}=      Run Keyword and Return Status   Find temperature result value difference and match with variance value      ${city_temperature_data_UI}     ${city_temperature_data_API}
-#    Should Be True       ${result}
+    ${city_temperature_data_API}=    Get From Dictionary    ${city_data_from_API}    tempCelsius
 
-
-
-
+    ${find_diff}=       Find temperature variance between ui and api results    ${city_temperature_data_UI}     ${city_temperature_data_API}
