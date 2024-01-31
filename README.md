@@ -1,5 +1,4 @@
-# TestAutomationWork
- Automation Test Challenge Work from TestVagrant
+# TestAutomationWork - NDTV Weather Menu - API & UI(Web) Automation
  
 #Automation SetUp for NDTV-WeatherReporting application using RobotFramework:
 
